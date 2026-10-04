@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banco de questões</title>
+<meta name="description" content="Banco de questões de matemática organizado por livro, tópico e subtópico, com cronômetro e estatísticas de desempenho.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#/">Banco de questões</a>
+  <nav class="nav" aria-label="Seções">
+    <a href="#/" data-nav="banco">Questões</a>
+    <a href="#/desempenho" data-nav="desempenho">Desempenho</a>
+    <a href="#/livros" data-nav="livros">Livros e dados</a>
+  </nav>
+
+  <div class="timer" id="timer">
+    <button class="timer-time" id="timerTime" type="button" aria-haspopup="true" aria-expanded="false" title="Escolher o tempo">25:00</button>
+    <button class="btn btn-ink" id="timerToggle" type="button">Iniciar</button>
+    <button class="btn btn-quiet" id="timerReset" type="button">Zerar</button>
+    <div class="timer-pop" id="timerPop" hidden>
+      <p class="pop-title">Tempo do cronômetro</p>
+      <div class="presets" id="timerPresets"></div>
+      <form class="custom" id="timerCustom">
+        <label for="timerMin">Outro tempo, em minutos</label>
+        <div class="custom-row">
+          <input id="timerMin" type="number" min="1" max="600" inputmode="numeric" placeholder="40">
+          <button class="btn btn-ink" type="submit">Definir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button class="btn btn-quiet theme" id="theme" type="button" aria-pressed="false">Lousa</button>
+</header>
+
+<main id="view" tabindex="-1"></main>
+
+<dialog id="dialog"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="tip" class="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

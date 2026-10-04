@@ -1,0 +1,4 @@
+# Os PDFs dos livros não vão para a hospedagem: cada pessoa carrega o seu no navegador.
+livros/
+__pycache__/
+.claude/
